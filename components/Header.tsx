@@ -1,4 +1,3 @@
-// components/Header.tsx
 "use client";
 
 import { useState } from "react";
@@ -12,19 +11,21 @@ const Header = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
-      <div className="mx-auto flex items-center justify-between px-6 py-4 lg:px-12">
-        {/* Logo and Name */}
-        <Link href="/" className="flex items-center space-x-3">
-          <Image
-            src="/images/cubichouse.png" // replace with your logo link
-            alt="Logo"
-            width={40}
-            height={40}
-            className="rounded-md shadow-sm"
-          />
-           
-        </Link>
+    <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm z-50 px-6 py-2">
+      <div className="max-w-7xl mx-auto flex items-center justify-between lg:px-12 h-20">
+        {/* Logo */}
+       {/* Logo */}
+<Link href="/" className="flex items-center">
+  <Image
+    src="/images/cubichouse.png"
+    alt="The Cubic House Logo"
+    width={200}
+    height={200}
+    priority
+    className="object-contain w-20 h-auto sm:w-28 md:w-44   lg:mt-16 md:mt-5"
+  />
+</Link>
+
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-10 text-gray-700 font-medium tracking-wide uppercase">
