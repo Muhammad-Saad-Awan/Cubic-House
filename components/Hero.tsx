@@ -39,8 +39,8 @@ const Hero = () => {
         {/* CTA Buttons */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
   {[
-    { href: "#projects", label: "Explore Projects" },
-    { href: "#contact", label: "Get Consultation" },
+    { href: "/projects", label: "Explore Projects" },
+    { href: "/contact", label: "Get Consultation" },
   ].map((btn, i) => (
     <Link
       key={i}

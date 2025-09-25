@@ -104,10 +104,10 @@ const AboutPage = () => {
           <div className="relative">
             <div className="absolute left-1/2 -ml-0.5 w-1 h-full bg-white/20 hidden md:block"></div>
             {[
-              { year: "2010", title: "Foundation", text: "Founded by lead architect Jane Doe, our studio began with a vision to revolutionize residential design in the city." },
-              { year: "2015", title: "Expansion & Growth", text: "We expanded our team to include expert commercial and interior designers, taking on larger, more complex projects." },
-              { year: "2019", title: "Sustainability Focus", text: "We committed to using sustainable and eco-friendly materials in all our projects, earning our first green architecture award." },
-              { year: "2023", title: "Digital Transformation", text: "We integrated advanced 3D modeling and virtual reality tours into our design process, offering clients an immersive experience." }
+              { year: "2018", title: "Foundation", text: "As batchmates, we connected through a shared passion for architecture and countless late-night design discussions." },
+              { year: "2023", title: "Graduation", text: "After years of learning and growth, we graduated, ready to bring fresh ideas into the professional world." },
+              { year: "2023-25", title: "Gaining Experience", text: "Working on diverse projects gave us hands-on experience, sharpened our skills, and shaped our design philosophy." },
+              { year: "2025", title: "Transformation", text: "With friendship, experience, and vision, we founded The Cubic House—a studio dedicated to creating meaningful and timeless spaces." }
             ].map((item, i) => (
               <motion.div
                 key={i}
