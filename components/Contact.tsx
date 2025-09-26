@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Poppins } from "next/font/google";
-import { Mail, Phone, MapPin } from "lucide-react";  
+import { Mail, Phone, MapPin } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -10,6 +11,9 @@ const poppins = Poppins({
 });
 
 const ContactUs = () => {
+  // Replace "mwprpdzg" with your Formspree form ID
+  const [state, handleSubmit] = useForm("mwprpdzg");
+
   return (
     <section
       className={`${poppins.className} relative min-h-screen flex items-center justify-center px-6 pt-28 pb-16 bg-black text-white`}
@@ -62,7 +66,6 @@ const ContactUs = () => {
                 </p>
               </div>
             </div>
-
             {/* Email */}
             <div className="flex items-center space-x-4">
               <div className="p-3 rounded-full bg-white/10 text-white border border-white/20">
@@ -84,7 +87,7 @@ const ContactUs = () => {
               <div>
                 <p className="text-sm text-gray-400">Office</p>
                 <p className="font-semibold hover:text-gray-100 transition-colors duration-300">
-                  671-E, E BLOCK, PHASE I WAPDA TOWN, MULTAN
+                  671-E, E BLOCK, PHASE I WAPDA TOWN, MULTAN
                 </p>
               </div>
             </div>
@@ -92,64 +95,91 @@ const ContactUs = () => {
         </motion.div>
 
         {/* Right: Contact Form */}
-        <motion.form
-          initial={{ x: 50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg space-y-6"
-        >
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              placeholder="Your Name"
-              className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Your Email"
-              className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
-            />
-          </div>
-          <div>
-            <label htmlFor="subject" className="block text-sm font-medium mb-2">
-              Subject
-            </label>
-            <input
-              type="text"
-              id="subject"
-              placeholder="Project Inquiry, General Question, etc."
-              className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-sm font-medium mb-2">
-              Message
-            </label>
-            <textarea
-              id="message"
-              rows={4}
-              placeholder="Write your message..."
-              className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition resize-none"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-white text-black px-6 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-lg transition-all duration-300 hover:bg-gray-200 hover:shadow-xl"
-          >
-            Send Message
-          </button>
-        </motion.form>
+{/* Right: Contact Form */}
+<motion.form
+  action="https://formspree.io/f/mwprpdzg"
+  method="POST"
+  initial={{ x: 50, opacity: 0 }}
+  whileInView={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg space-y-6"
+>
+  <div>
+    <label htmlFor="name" className="block text-sm font-medium mb-2">
+      Name
+    </label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Your Name"
+      required
+      className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
+    />
+  </div>
+  <div>
+    <label htmlFor="email" className="block text-sm font-medium mb-2">
+      Email
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Your Email"
+      required
+      className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
+    />
+  </div>
+
+  <div>
+  <label htmlFor="phone" className="block text-sm font-medium mb-2">
+    Phone Number
+  </label>
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    placeholder="Your Phone Number"
+    required
+    pattern="[0-9]{10,15}"
+    className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
+  />
+</div>
+
+  <div>
+    <label htmlFor="subject" className="block text-sm font-medium mb-2">
+      Subject
+    </label>
+    <input
+      type="text"
+      id="subject"
+      name="subject"
+      placeholder="Project Inquiry, General Question, etc."
+      className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition"
+    />
+  </div>
+  <div>
+    <label htmlFor="message" className="block text-sm font-medium mb-2">
+      Message
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      rows={4}
+      placeholder="Write your message..."
+      required
+      className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition resize-none"
+    />
+  </div>
+  <button
+    type="submit"
+    className="w-full bg-white text-black px-6 py-3 rounded-lg font-semibold uppercase tracking-wide shadow-lg transition-all duration-300 hover:bg-gray-200 hover:shadow-xl"
+  >
+    Send Message
+  </button>
+</motion.form>
+
       </div>
     </section>
   );

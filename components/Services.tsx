@@ -11,15 +11,15 @@ const poppins = Poppins({
 
 const Services = () => {
   return (
-    <section className={`${poppins.className} bg-stone-950 text-stone-100`}>
+    <section className={`${poppins.className} bg-black text-white `}>
       {/* Hero Section */}
 
       <div
-        className="relative h-[90vh] flex items-center justify-center text-center px-6 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-bgservice.jpg')" }}
-      >
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-stone-950/70" />
+  className="relative h-[80vh] flex items-center justify-center text-center px-6 bg-cover bg-center"
+  style={{ backgroundImage: "url('/images/hero-bgservice.jpg')" }}
+>
+  {/* Gradient Overlay for depth instead of flat black */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
 
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto">
@@ -27,7 +27,7 @@ const Services = () => {
             Our Services
           </h1>
 
-          <p className="mt-6 text-xl md:text-2xl text-stone-200 leading-relaxed transition-opacity duration-700 hover:opacity-100 drop-shadow-md">
+          <p className="mt-6 text-xl md:text-2xl text-white leading-relaxed transition-opacity duration-700 hover:opacity-100 drop-shadow-md">
             “Crafting timeless spaces where functionality meets elegance, innovation,
             and lasting impact — designed to inspire, endure, and elevate lifestyles.”
           </p>
@@ -71,10 +71,10 @@ const Services = () => {
             <div className="absolute inset-0 bg-stone-950/30 group-hover:bg-transparent transition-colors duration-500" />
           </div>
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-amber-500">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-white">
               Architecture
             </h2>
-            <p className="text-stone-300 text-lg leading-relaxed">
+            <p className="text-white text-lg leading-relaxed">
               At The Cubic House, our architectural design services focus on creating spaces that balance functionality, beauty, and innovation. We approach every project with a strong design philosophy rooted in clarity and precision, ensuring that each structure is not only visually striking but also practical, sustainable, and timeless. From concept development to detailed drawings and approvals, we work closely with our clients to transform their ideas into well-planned architectural solutions that reflect their lifestyle, identity, and aspirations.
             </p>
           </div>
@@ -99,10 +99,10 @@ const Services = () => {
             <div className="absolute inset-0 bg-stone-950/30 group-hover:bg-transparent transition-colors duration-500" />
           </div>
           <div className="md:order-1">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-sky-400">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-white">
               Construction
             </h2>
-            <p className="text-stone-300 text-lg leading-relaxed">
+            <p className="text-white text-lg leading-relaxed">
               Our construction services are built on a foundation of quality, reliability, and attention to detail. At The Cubic House, we believe that the strength of any project lies in its execution, which is why we oversee every stage of the building process with precision and care. From foundation to finishing, our team ensures that the highest standards of materials, techniques, and workmanship are maintained. We aim to deliver projects that not only meet but exceed expectations — completed on time, within budget, and built to last.
             </p>
           </div>
@@ -127,10 +127,10 @@ const Services = () => {
             <div className="absolute inset-0 bg-stone-950/30 group-hover:bg-transparent transition-colors duration-500" />
           </div>
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-amber-500">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-white">
               Interior Design
             </h2>
-            <p className="text-stone-300 text-lg leading-relaxed">
+            <p className="text-white text-lg leading-relaxed">
               Interior spaces are where design meets daily life, and at The Cubic House, we craft interiors that are both functional and inspiring. Our interior design services are tailored to reflect the personality and needs of each client, blending comfort, style, and efficiency. From layout planning and material selection to furniture, lighting, and finishes, we create cohesive environments that enhance the way people live, work, and experience their spaces. Whether modern minimalism or timeless elegance, we ensure that every detail contributes to a harmonious and well-designed interior.
             </p>
           </div>
@@ -149,9 +149,9 @@ const Services = () => {
           className="max-w-6xl mx-auto text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Why Choose <span className="text-sky-400">The Cubic House?</span>
+            Why Choose <span className="text-white">The Cubic House?</span>
           </h2>
-          <p className="text-stone-400 max-w-3xl mx-auto mb-16 text-lg">
+          <p className="text-white max-w-3xl mx-auto mb-16 text-lg">
             More than architecture — we deliver trust, innovation, and a seamless client
             experience.
           </p>
@@ -184,17 +184,17 @@ const Services = () => {
                 className="relative p-8 rounded-2xl border border-stone-800 bg-stone-900 shadow-lg group"
               >
                 {/* Gradient Border on Hover */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-500 group-hover:border-sky-500" />
+                <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-500 group-hover:border-white" />
 
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
                     {item.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-stone-100 group-hover:text-amber-500 transition-colors duration-300">
+                  <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-white transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-stone-400 leading-relaxed text-sm">
+                  <p className="text-white leading-relaxed text-sm">
                     {item.desc}
                   </p>
                 </div>
@@ -215,36 +215,36 @@ const Services = () => {
           viewport={{ once: true }}
           className="bg-stone-900 p-10 rounded-2xl shadow-2xl border border-stone-800"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-amber-500">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">
             Start Your Project With Us
           </h2>
-          <p className="text-stone-400 text-center mb-12">
+          <p className="text-white text-center mb-12">
             Let's build something remarkable together.
           </p>
           <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <input
               type="text"
               placeholder="Your Name"
-              className="px-4 py-3 rounded-lg bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-sky-500 placeholder-stone-500 transition-colors duration-300"
+              className="px-4 py-3 rounded-lg bg-stone-950 border border-stone-800 text-white focus:outline-none focus:border-sky-500 placeholder-stone-400 transition-colors duration-300"
             />
             <input
               type="email"
               placeholder="Your Email"
-              className="px-4 py-3 rounded-lg bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-sky-500 placeholder-stone-500 transition-colors duration-300"
+              className="px-4 py-3 rounded-lg bg-stone-950 border border-stone-800 text-white focus:outline-none focus:border-sky-500 placeholder-stone-400 transition-colors duration-300"
             />
             <input
               type="text"
               placeholder="Subject"
-              className="col-span-1 md:col-span-2 px-4 py-3 rounded-lg bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-sky-500 placeholder-stone-500 transition-colors duration-300"
+              className="col-span-1 md:col-span-2 px-4 py-3 rounded-lg bg-stone-950 border border-stone-800 text-white focus:outline-none focus:border-sky-500 placeholder-stone-400 transition-colors duration-300"
             />
             <textarea
               rows={5}
               placeholder="Your Message"
-              className="col-span-1 md:col-span-2 px-4 py-3 rounded-lg bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-sky-500 placeholder-stone-500 transition-colors duration-300 resize-none"
+              className="col-span-1 md:col-span-2 px-4 py-3 rounded-lg bg-stone-950 border border-stone-800 text-white focus:outline-none focus:border-sky-500 placeholder-stone-400 transition-colors duration-300 resize-none"
             />
             <button
               type="submit"
-              className="col-span-1 md:col-span-2 bg-stone-950 border-stone-800 text-stone-100 px-8 py-4 rounded-lg font-semibold uppercase tracking-wide shadow-lg hover:bg-sky-500 transition-all duration-300"
+              className="col-span-1 md:col-span-2 bg-stone-950 border-stone-800 text-white px-8 py-4 rounded-lg font-semibold uppercase tracking-wide shadow-lg hover:bg-sky-500 transition-all duration-300"
             >
               Send Message
             </button>

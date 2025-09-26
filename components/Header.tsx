@@ -94,7 +94,7 @@ const Header = () => {
               {["Projects", "Services", "About", "Contact"].map((item) => (
                 <Link
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  href={`${item.toLowerCase()}`}
                   onClick={toggleMenu}
                   className="relative group py-2"
                 >
