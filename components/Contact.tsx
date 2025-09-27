@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Poppins } from "next/font/google";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { useForm, ValidationError } from "@formspree/react";
+import { useForm, } from "@formspree/react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,7 +20,7 @@ const ContactUs = () => {
     >
       {/* Background Pattern */}
       <div className="absolute inset-0">
-        <div className="w-full h-full bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-20" />
+        <div className="w-full h-full bg-[url('/images/hero-bg.JPG')] bg-cover bg-center opacity-20" />
         <div className="absolute inset-0 bg-black/70" />
       </div>
 

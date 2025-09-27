@@ -16,7 +16,7 @@ const AboutPage = () => {
     >
       {/* Background Image and Overlay */}
       <Image
-        src="/images/hero-bg.jpg"
+        src="/images/hero-bg.JPG"
         alt="Architectural Background"
         fill
         priority

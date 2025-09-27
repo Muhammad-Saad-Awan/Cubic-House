@@ -15,7 +15,7 @@ const Hero = () => {
     >
       {/* Background Image */}
       <Image
-        src="/images/hero-bg.jpg"
+        src="/images/hero-bg.JPG"
         alt="Architectural Background"
         fill
         priority
